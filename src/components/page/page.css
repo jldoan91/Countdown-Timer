@@ -1,0 +1,49 @@
+body {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    height: 100%;
+  }
+  
+  #root {
+    height: 100%;
+  }
+  
+  .container {
+    background: lightyellow;
+    text: #333;
+    height: 100%;
+    padding: 3rem;
+    
+  }
+  
+  .container.dark {
+    background: purple;
+    color: white;
+  }
+  
+  .title {
+    color: #444;
+  }
+  
+  .title.dark {
+    color: #eee
+  }
+  
+  .list {
+    
+  }
+  
+  .list.dark {
+    
+  }
+  
+  .box {
+    border: 2px solid steelblue;
+    color: #333;
+    padding: 3rem;
+  }
+  
+  .box.dark {
+    border: 2px solid yellow;
+    color: #eee;
+  }
