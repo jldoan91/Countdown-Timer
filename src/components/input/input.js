@@ -4,9 +4,6 @@ import styles from './input.css';
 const Input = class Input extends React.Component {
     constructor (props) {
         super(props);
-        this.state = {
-            running: false
-        }
     }
 
     render(){
