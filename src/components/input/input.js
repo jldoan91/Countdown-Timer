@@ -8,10 +8,7 @@ const Input = class Input extends React.Component {
 
     render(){
         return (
-            <div>
-                <h3>Enter a date!</h3>
                 <input type="date"></input>
-            </div>
         );
     }
 }

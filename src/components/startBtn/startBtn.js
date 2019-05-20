@@ -11,9 +11,7 @@ const StartBtn = class StartBtn extends React.Component {
 
     render(){
         return (
-            <div>
-                <button>Start</button>
-            </div>
+                <button onClick={this.props.onClick}>Start</button>
         );
     }
 }

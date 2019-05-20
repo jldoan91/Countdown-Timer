@@ -8,18 +8,26 @@ const App = class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            date: '',
+            now: '',
             days: '',
             hours: '',
             minutes: '',
             seconds: ''
         }
     }
+    
+    dateEntered(){
+        console.log('clicked');
+    }
+
     render() {
         return (
             <div>
-                <Display days={this.state.days} hours={this.state.hours} minutes={this.state.minutes} seconds={this.state.seconds}/>
-                <Input />
-                <StartBtn />
+                <Display />
+                <h3>Enter a date</h3>
+                    <Input />
+                    <StartBtn onClick={this.dateEntered} />
             </div>
         );
     }
