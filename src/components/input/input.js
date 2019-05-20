@@ -8,7 +8,7 @@ const Input = class Input extends React.Component {
 
     render(){
         return (
-                <input type="date"></input>
+                <input type="date" onChange={this.onChange} value={this.props.value}></input>
         );
     }
 }

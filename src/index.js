@@ -8,17 +8,23 @@ const App = class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            date: '',
-            now: '',
-            days: '',
-            hours: '',
-            minutes: '',
-            seconds: ''
+            date: undefined,
+            now: new Date().getTime(),
+            days: undefined,
+            hours: undefined,
+            minutes: undefined,
+            seconds: undefined
         }
+        this.dateEntered = this.dateEntered.bind(this);
+    }
+
+    getDate(event) {
+        this.setState({date: event.target.value})
     }
     
     dateEntered(){
         console.log('clicked');
+        console.log(this.state.date);
     }
 
     render() {
@@ -26,7 +32,7 @@ const App = class App extends React.Component {
             <div>
                 <Display />
                 <h3>Enter a date</h3>
-                    <Input />
+                    <Input onChange={this.getDate} value={this.state.date} />
                     <StartBtn onClick={this.dateEntered} />
             </div>
         );
