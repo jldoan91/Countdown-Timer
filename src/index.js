@@ -1,20 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Display from './components/display/display';
-import Input from './components/input/input';
-import StartBtn from './components/startBtn/startBtn';
+import Countdown from './components/countdown/countdown';
 
 const App = class App extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            date: undefined,
-            now: new Date().getTime(),
-            days: undefined,
-            hours: undefined,
-            minutes: undefined,
-            seconds: undefined
-        }
+        this.state = {}
         this.dateEntered = this.dateEntered.bind(this);
     }
 
@@ -29,12 +20,7 @@ const App = class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <Display />
-                <h3>Enter a date</h3>
-                    <Input onChange={this.getDate} value={this.state.date} />
-                    <StartBtn onClick={this.dateEntered} />
-            </div>
+            <Countdown />
         );
     }
 };
