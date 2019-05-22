@@ -11,8 +11,6 @@ const Countdown = class Countdown extends React.Component {
             minutes: '',
             seconds: ''
         }
-        // this.handleChange = this.handleChange.bind(this);
-        // this.onClick = this.onClick.bind(this);
     }
 
         handleChange(event){
