@@ -11,8 +11,8 @@ const Countdown = class Countdown extends React.Component {
             minutes: '',
             seconds: ''
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.onClick = this.onClick.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
+        // this.onClick = this.onClick.bind(this);
     }
 
         handleChange(event){
@@ -31,8 +31,8 @@ const Countdown = class Countdown extends React.Component {
             <div>
                 <div>{this.state.days} Days {this.state.hours} Hours {this.state.minutes} Minutes {this.state.seconds} Seconds</div>
                 <h3>Enter a date</h3>
-                <input type="date" onChange={this.handleChange} value={this.state.date}></input>
-                <button onClick={this.onClick}>Start</button>
+                <input type="date" onChange={this.handleChange.bind(this)} value={this.state.date}></input>
+                <button onClick={this.onClick.bind(this)}>Start</button>
             </div>
         );
     }
