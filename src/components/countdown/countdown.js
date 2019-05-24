@@ -18,10 +18,16 @@ const Countdown = class Countdown extends React.Component {
         };
 
         getDate = () => {
-            const now = new Date().getTime();
-            const date = new Date(this.state.date).getTime();
-            console.log(date);
-            console.log(now);
+            this.interval = setInterval(() => {
+                const now = new Date().getTime() / 1000;
+                const date = new Date(this.state.date).getTime() / 1000;
+                const timeLeft = (date - now);
+                const days = Math.floor(timeLeft / 86400);
+                const hours = Math.floor(timeLeft / 3600) % 24;
+                const minutes = Math.floor(timeLeft / 60) % 60;
+                const seconds = Math.floor(timeLeft) % 60;
+                this.setState({ days: days, hours: hours, minutes: minutes, seconds: seconds});
+            }, 1000);
         };
 
     render() {
