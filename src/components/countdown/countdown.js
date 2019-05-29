@@ -12,7 +12,10 @@ const Countdown = class Countdown extends React.Component {
             minutes: '',
             seconds: '',
             submitted: false,
-            christmas: '12/25/2019'
+            newyear: '',
+            independence: '',
+            thanksgiving: '',
+            christmas: ''
         }
     }
 
@@ -49,12 +52,12 @@ const Countdown = class Countdown extends React.Component {
                 <input className={styles.dateInput} type="date" disabled={this.state.submitted} onChange={this.handleChange} value={this.state.date}></input>
                 <div>
                     <button className={styles.btn} disabled={this.state.submitted} onClick={() => this.countDown(this.state.date)}>Start</button>
-                    <button className={styles.btn}>Reset</button>
+                    <button className={styles.btn} onClick={() => location.reload()}>Reset</button>
                 </div>
                 <div>
-                    <button className={styles.btn}>New Years</button>
-                    <button className={styles.btn}>4th of July</button>
-                    <button className={styles.btn}>Thanksgiving</button>
+                    <button className={styles.btn} disabled={this.state.submitted} onClick={() => this.countDown(this.state.newyear)}> New Years</button>
+                    <button className={styles.btn} disabled={this.state.submitted} onClick={() => this.countDown(this.state.independence)}> 4th of July</button>
+                    <button className={styles.btn} disabled={this.state.submitted} onClick={() => this.countDown(this.state.thanksgiving)}> Thanksgiving</button>
                     <button className={styles.btn} disabled={this.state.submitted} onClick={() => this.countDown(this.state.christmas)}>Christmas</button>
                 </div>
             </div>
