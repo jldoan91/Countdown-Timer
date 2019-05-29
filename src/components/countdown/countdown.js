@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './countdown.css'
 
 const Countdown = class Countdown extends React.Component {
 
@@ -39,12 +40,13 @@ const Countdown = class Countdown extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>{this.state.days} Days {this.state.hours} Hours {this.state.minutes} Minutes {this.state.seconds} Seconds left until {this.state.date}!</div>
+            <div className={styles.container}>
+                <div><h1><strong>{this.state.days}</strong> Days <strong>{this.state.hours}</strong> Hours <strong>{this.state.minutes}</strong> Minutes <strong>{this.state.seconds}</strong> Seconds left until <strong>{this.state.date}!</strong></h1></div>
                 <h3>Enter a date</h3>
-                <input type="date" disabled={this.state.submitted} onChange={this.handleChange} value={this.state.date}></input>
-                <button disabled={this.state.submitted} onClick={this.getDate}>Start</button>
-            </div>
+                <input className={styles.dateInput} type="date" disabled={this.state.submitted} onChange={this.handleChange} value={this.state.date}></input>
+                <br />
+                <button className={styles.startBtn} disabled={this.state.submitted} onClick={this.getDate}>Start</button>
+            </div >
         );
     }
 }

@@ -1,0 +1,33 @@
+* {
+    background:#222;
+    color: #fff;
+}
+
+.container{
+    text-align: center;
+    margin: 10% auto;
+    width: 33%;
+    border: 2px solid white;
+    border-radius: 1.25rem;
+}
+
+.startBtn {
+    margin: 1.5rem;
+    width: 7rem;
+    height: 3rem;
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+}
+
+.dateInput {
+    font-size: 1.5rem;
+    border-radius: 0.25rem;
+}
+
+input:focus {
+    box-shadow: 0 0 0 2pt #5E9ED6;
+}
+
+button:focus {
+    box-shadow: 0 0 0 2pt #5E9ED6;
+}
