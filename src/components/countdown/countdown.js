@@ -12,10 +12,10 @@ const Countdown = class Countdown extends React.Component {
             minutes: '',
             seconds: '',
             submitted: false,
-            newyear: '',
-            independence: '',
-            thanksgiving: '',
-            christmas: ''
+            newyear: '01/01/2020',
+            independence: '07/04/2019',
+            thanksgiving: '11/28/2019',
+            christmas: '12/25/2019'
         }
     }
 
@@ -26,6 +26,7 @@ const Countdown = class Countdown extends React.Component {
     countDown = (date) => {
         clearInterval(this.interval);
         this.interval = setInterval(() => {
+            this.setState({ date: date })
             const now = new Date().getTime() / 1000;
             const target = new Date(date).getTime() / 1000;
             const timeLeft = (target - now);
