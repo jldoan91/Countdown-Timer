@@ -20,7 +20,6 @@ const Countdown = class Countdown extends React.Component {
     };
 
     getDate = () => {
-        this.setState({ submitted: true })
         this.interval = setInterval(() => {
             const now = new Date().getTime() / 1000;
             const date = new Date(this.state.date).getTime() / 1000;
@@ -29,11 +28,13 @@ const Countdown = class Countdown extends React.Component {
             const hours = Math.floor(timeLeft / 3600) % 24;
             const minutes = Math.floor(timeLeft / 60) % 60;
             const seconds = Math.floor(timeLeft) % 60;
-            this.setState({ days: days, hours: hours, minutes: minutes, seconds: seconds });
             if (timeLeft <= 0) {
                 this.setState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
                 this.setState({ submitted: false })
                 clearInterval(this.interval);
+            } else {
+                this.setState({ submitted: true })
+                this.setState({ days: days, hours: hours, minutes: minutes, seconds: seconds });
             }
         }, 1000);
     };
@@ -41,7 +42,7 @@ const Countdown = class Countdown extends React.Component {
     render() {
         return (
             <div className={styles.container}>
-                <div><h1><strong>{this.state.days}</strong> Days <strong>{this.state.hours}</strong> Hours <strong>{this.state.minutes}</strong> Minutes <strong>{this.state.seconds}</strong> Seconds left until <strong>{this.state.date}!</strong></h1></div>
+                <div className={styles.display}><strong>{this.state.days}</strong> Days <strong>{this.state.hours}</strong> Hours <strong>{this.state.minutes}</strong> Minutes <strong>{this.state.seconds}</strong> Seconds left until <strong>{this.state.date}!</strong></div>
                 <h3>Enter a date</h3>
                 <input className={styles.dateInput} type="date" disabled={this.state.submitted} onChange={this.handleChange} value={this.state.date}></input>
                 <br />
