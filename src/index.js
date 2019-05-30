@@ -3,19 +3,17 @@ import ReactDOM from 'react-dom';
 import Countdown from './components/countdown/countdown';
 
 const App = class App extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {}
-        this.dateEntered = this.dateEntered.bind(this);
     }
 
-    getDate(event) {
-        this.setState({date: event.target.value})
+    connecToServer = () => {
+        fetch('/');
     }
-    
-    dateEntered(){
-        console.log('clicked');
-        console.log(this.state.date);
+
+    componentDidMount() {
+        this.connecToServer();
     }
 
     render() {
