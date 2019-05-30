@@ -6,7 +6,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open --port 8080",
+    "dev": "webpack-dev-server --mode development --open --port 9000",
     "build": "webpack --mode production"
   },
   "dependencies": {
