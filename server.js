@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
-app.get('*', (req, res) => { res.sendFile(path.join(__dirname + '/client/public/index.html')); })
+app.get('*', (req, res) => { res.sendFile(path.join(__dirname + '/src/index.html')); })
 
 app.listen(port, (req, res) => { console.log(`server listening on port: ${port}`); })
 
