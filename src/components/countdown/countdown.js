@@ -23,6 +23,18 @@ const Countdown = class Countdown extends React.Component {
         this.setState({ date: event.target.value });
     };
 
+    resetCountdown = () => {
+        clearInterval(this.interval);
+        this.setState({
+            submitted: false,
+            days: '',
+            hours: '',
+            minutes: '',
+            seconds: '',
+            date: ''
+        })
+    }
+
     countDown = (date) => {
         clearInterval(this.interval);
         this.interval = setInterval(() => {
@@ -34,14 +46,7 @@ const Countdown = class Countdown extends React.Component {
             const hours = Math.floor(timeLeft / 3600) % 24;
             const minutes = Math.floor(timeLeft / 60) % 60;
             const seconds = Math.floor(timeLeft) % 60;
-            if (timeLeft <= 0 || !timeLeft) {
-                this.setState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
-                this.setState({ submitted: false })
-                clearInterval(this.interval);
-            } else {
-                this.setState({ submitted: true })
-                this.setState({ days: days, hours: hours, minutes: minutes, seconds: seconds });
-            }
+            (timeLeft <= 0 || !timeLeft) ? this.setState({ days: 0, hours: 0, minutes: 0, seconds: 0, submitted: false }) : this.setState({ days: days, hours: hours, minutes: minutes, seconds: seconds, submitted: true })
         }, 1000);
     };
 
@@ -53,7 +58,7 @@ const Countdown = class Countdown extends React.Component {
                 <input className={styles.dateInput} type="date" disabled={this.state.submitted} onChange={this.handleChange} value={this.state.date}></input>
                 <div>
                     <button className={styles.btn} disabled={this.state.submitted} onClick={() => this.countDown(this.state.date)}>Start</button>
-                    <button className={styles.btn} onClick={() => location.reload()}>Reset</button>
+                    <button className={styles.btn} onClick={this.resetCountdown}>Reset</button>
                 </div>
                 <div>
                     <button className={styles.btn} disabled={this.state.submitted} onClick={() => this.countDown(this.state.newyear)}> New Years</button>
