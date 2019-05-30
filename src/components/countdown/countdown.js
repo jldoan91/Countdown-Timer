@@ -23,6 +23,18 @@ const Countdown = class Countdown extends React.Component {
         this.setState({ date: event.target.value });
     };
 
+    resetComponent = () => {
+        clearInterval(this.interval);
+        this.setState({
+            submitted: false,
+            days: '',
+            hours: '',
+            minutes: '',
+            seconds: '',
+            date: ''
+        })
+    }
+
     countDown = (date) => {
         clearInterval(this.interval);
         this.interval = setInterval(() => {
@@ -53,7 +65,7 @@ const Countdown = class Countdown extends React.Component {
                 <input className={styles.dateInput} type="date" disabled={this.state.submitted} onChange={this.handleChange} value={this.state.date}></input>
                 <div>
                     <button className={styles.btn} disabled={this.state.submitted} onClick={() => this.countDown(this.state.date)}>Start</button>
-                    <button className={styles.btn} onClick={() => location.reload()}>Reset</button>
+                    <button className={styles.btn} onClick={this.resetComponent}>Reset</button>
                 </div>
                 <div>
                     <button className={styles.btn} disabled={this.state.submitted} onClick={() => this.countDown(this.state.newyear)}> New Years</button>
