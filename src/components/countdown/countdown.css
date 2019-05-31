@@ -46,7 +46,6 @@ strong {
     margin: 0.5rem;
     text-align: center;
     font-size: 1.2rem;
-    /* font-size: 0.8rem; */
     border-radius: 0.5rem;
     padding: 0.1rem;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -54,4 +53,19 @@ strong {
 
 input:focus, button:focus {
     outline: none;
+}
+
+@media screen and (max-width: 300px){
+    .enter{
+        font-size: 0.8rem;
+    }
+    .display{
+        font-size: 0.5rem;
+    }
+    .dateInput {
+        font-size: 0.8rem;
+    }
+    .btn{
+        font-size: 0.75rem;
+    }
 }
