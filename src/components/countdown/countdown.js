@@ -58,7 +58,7 @@ const Countdown = class Countdown extends React.Component {
         return (
             <div className={styles.container}>
                 <div className={styles.display}><strong>{this.state.days}</strong> Days <strong>{this.state.hours}</strong> Hours <strong>{this.state.minutes}</strong> Minutes <strong>{this.state.seconds}</strong> Seconds left until <strong>{this.state.date}</strong>!</div>
-                <h3>Enter a date</h3>
+                <div className={styles.enter}>Enter a date</div>
                 <input className={styles.dateInput} type="date" disabled={this.state.submitted} onChange={this.handleChange} value={this.state.date}></input>
                 <div>
                     <button className={styles.btn} disabled={this.state.submitted} onClick={() => this.countDown(this.state.date)}>Start</button>
