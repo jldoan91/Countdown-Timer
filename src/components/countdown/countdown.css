@@ -9,14 +9,14 @@ strong {
 }
 
 .display {
-    margin: 1rem auto;
-    font-size: 1.75rem;
+    margin: 0.8rem auto;
+    font-size: 1.4rem;
 }
 
 .container{
     background: linear-gradient(to left, #1cefff, #c0cfaa);
     text-align: center;
-    margin: 10% auto;
+    margin: 8% auto;
     width: 37%;
     height: 100%;
     border: 2px solid rgba(255, 255, 255, 0.25);
@@ -26,11 +26,11 @@ strong {
 
 .btn {
     overflow: hidden;
-    margin: 1.5rem;
-    min-width: 7rem;
-    padding: 0.5rem;
-    min-height: 3rem;
-    font-size: 1.25rem;
+    margin: 1rem;
+    min-width: 5.6rem;
+    padding: 0.4rem;
+    min-height: 2.4rem;
+    font-size: 1rem;
     border-radius: 0.5rem;
     background-color: transparent;
     opacity: 1;
@@ -43,9 +43,9 @@ strong {
 
 .dateInput {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border-radius: 0.5rem;
-    padding: 0.5rem;
+    padding: 0.4rem;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
